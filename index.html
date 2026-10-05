@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Семейный счёт — простой калькулятор доходов, расходов и накоплений для семьи."
+    />
+    <title>Семейный счёт — калькулятор семейного бюджета</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-landing">
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Семейный счёт</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#how">Как работает</a>
+        <a href="#features">Возможности</a>
+        <a href="calculator.html">Калькулятор</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="calculator.html">Открыть расчёт</a>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="brand-mark">Семейный счёт</p>
+          <h1>Бюджет семьи — на одном экране</h1>
+          <p class="lead">
+            Считайте доходы, расходы и остаток за минуту. Данные сохраняются в
+            браузере — можно вернуться позже.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="calculator.html">Начать расчёт</a>
+            <a class="btn btn-ghost" href="#how">Как это устроено</a>
+          </div>
+        </div>
+        <div class="hero-stage" aria-hidden="true">
+          <div class="hero-panel">
+            <div class="hero-panel-row">
+              <span>Доходы</span>
+              <strong class="anim-count" data-target="145000">0 ₽</strong>
+            </div>
+            <div class="hero-panel-row">
+              <span>Расходы</span>
+              <strong class="anim-count" data-target="98000">0 ₽</strong>
+            </div>
+            <div class="hero-panel-row highlight">
+              <span>Остаток</span>
+              <strong class="anim-count" data-target="47000">0 ₽</strong>
+            </div>
+            <div class="hero-bar">
+              <div class="hero-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="section-head">
+          <h2>Три шага — и картина ясна</h2>
+          <p>Без регистрации и таблиц: только цифры, которые важны семье.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>Введите доходы</h3>
+            <p>Зарплаты и дополнительные поступления за месяц.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>Добавьте расходы</h3>
+            <p>Жильё, еда, транспорт, подписки — сколько угодно пунктов.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>Смотрите остаток</h3>
+            <p>Сразу видно, сколько уходит и сколько можно отложить.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section section-alt" id="features">
+        <div class="section-head">
+          <h2>Что умеет калькулятор</h2>
+          <p>Небольшой набор функций — без лишнего шума.</p>
+        </div>
+        <ul class="feature-list">
+          <li>
+            <h3>Автопересчёт</h3>
+            <p>Итоги обновляются сразу при изменении доходов и расходов.</p>
+          </li>
+          <li>
+            <h3>Сохранение в браузере</h3>
+            <p>Данные остаются на устройстве через localStorage.</p>
+          </li>
+          <li>
+            <h3>Подсказки по бюджету</h3>
+            <p>Короткий вывод: остаток, дефицит или «в ноль».</p>
+          </li>
+          <li>
+            <h3>Доля расходов</h3>
+            <p>Прогресс-бар показывает, какая часть дохода уже занята.</p>
+          </li>
+        </ul>
+        <div class="section-cta">
+          <a class="btn btn-primary" href="calculator.html">Перейти к калькулятору</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html">Семейный счёт</a>
+      <p>Учебный проект · данные хранятся только у вас в браузере</p>
+    </footer>
+
+    <script src="landing.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Калькулятор семейного бюджета: доходы, расходы, остаток и накопления."
+    />
+    <title>Калькулятор — Семейный счёт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-calculator">
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">Семейный счёт</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html#how">Как работает</a>
+        <a href="index.html#features">Возможности</a>
+        <a href="calculator.html" aria-current="page">Калькулятор</a>
+      </nav>
+      <a class="btn btn-ghost header-cta" href="index.html">На главную</a>
+    </header>
+
+    <main class="calc-main">
+      <div class="calc-intro">
+        <h1>Калькулятор семейного бюджета</h1>
+        <p>
+          Введите доходы и расходы — остаток и накопления посчитаются сами.
+          Всё сохраняется локально в браузере.
+        </p>
+      </div>
+
+      <div class="budget-grid">
+        <section class="panel" aria-labelledby="income-title">
+          <h2 id="income-title">Доходы</h2>
+
+          <div class="form-group">
+            <label for="salary1">Доход первого человека</label>
+            <input
+              type="number"
+              id="salary1"
+              placeholder="Например: 80000"
+              min="0"
+              inputmode="numeric"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="salary2">Доход второго человека</label>
+            <input
+              type="number"
+              id="salary2"
+              placeholder="Например: 60000"
+              min="0"
+              inputmode="numeric"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="otherIncome">Другие доходы</label>
+            <input
+              type="number"
+              id="otherIncome"
+              placeholder="Например: 10000"
+              min="0"
+              inputmode="numeric"
+            />
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="expense-title">
+          <h2 id="expense-title">Расходы</h2>
+
+          <div class="add-row">
+            <input
+              type="text"
+              id="expenseName"
+              placeholder="Название расхода"
+              autocomplete="off"
+            />
+            <input
+              type="number"
+              id="expenseAmount"
+              placeholder="Сумма"
+              min="0"
+              inputmode="numeric"
+            />
+            <button class="btn btn-primary" id="addExpenseBtn" type="button">
+              Добавить
+            </button>
+          </div>
+
+          <div id="expenseList" class="expense-list" aria-live="polite">
+            <div class="empty-message">Пока нет добавленных расходов</div>
+          </div>
+        </section>
+
+        <section class="panel result-panel" aria-labelledby="result-title">
+          <h2 id="result-title">Результат</h2>
+
+          <div class="summary">
+            <div class="summary-item">
+              <div class="summary-title">Общий доход</div>
+              <div class="summary-value income-value" id="totalIncome">0 ₽</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-title">Расходы</div>
+              <div class="summary-value expense-value" id="totalExpenses">0 ₽</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-title">Остаток</div>
+              <div class="summary-value balance-value" id="balance">0 ₽</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-title">Можно накопить</div>
+              <div class="summary-value saving-value" id="savings">0 ₽</div>
+            </div>
+          </div>
+
+          <div class="progress-section">
+            <div class="progress-title">
+              <span>Доля расходов от дохода</span>
+              <span id="expensePercent">0%</span>
+            </div>
+            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+
+          <div class="message" id="budgetMessage">
+            Добавьте доходы и расходы, чтобы увидеть результат.
+          </div>
+
+          <button class="btn btn-danger" id="clearAllBtn" type="button">
+            Очистить всё
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="index.html">Семейный счёт</a>
+      <p>Данные не отправляются на сервер</p>
+    </footer>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
