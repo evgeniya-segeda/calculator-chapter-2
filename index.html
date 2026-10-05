@@ -15,6 +15,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var theme =
+          saved ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body class="page-landing">
     <div class="bg-glow" aria-hidden="true"></div>
@@ -26,7 +37,19 @@
         <a href="#features">Возможности</a>
         <a href="calculator.html">Калькулятор</a>
       </nav>
-      <a class="btn btn-primary header-cta" href="calculator.html">Открыть расчёт</a>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Переключить тему"
+          title="Светлая / тёмная тема"
+        >
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="btn btn-primary header-cta" href="calculator.html">Открыть расчёт</a>
+      </div>
     </header>
 
     <main>
@@ -123,5 +146,8 @@
     </footer>
 
     <script src="landing.js"></script>
+  </body>
+</html>
+
   </body>
 </html>
